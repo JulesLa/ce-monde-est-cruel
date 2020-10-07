@@ -8,25 +8,17 @@ use Hackathon\Game\Result;
  * Class OssusPlayers
  * @package Hackathon\PlayerIA
  * @author Jules LAPISARDI
+ * @description Mon but est de jouer grace aux stats pour jouer le contre de ce que l'adversaire joue le plus, pour les 10 premiers tours je joue juste l'opposé de l'adversaire pour recuperer une base de stats
  */
 class OssusPlayer extends Player
 {
     protected $mySide;
     protected $opponentSide;
     protected $result;
-
     public function getChoice()
     {
-        //IA 133917 inverse adversaire
-        //IA 10297 Stats
-        //IA 10483 inverse 50 premier rounds puis stats
-        //IA 8926
-        //IA 8261 LOOSING STRAT
-        //IA 8077 LOOSING STRAT
-        //IA 6891
-        //IA 7297
-        //IA
-        if ($this->result->getNbRound() < 10) {
+        //IA 76061
+        if ($this->result->getNbRound() < 77) {
             if ($this->result->getLastChoiceFor($this->opponentSide) === parent::rockChoice()) {
                 return parent::paperChoice();
             }
