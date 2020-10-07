@@ -24,8 +24,8 @@ class OssusPlayer extends Player
         //IA 8261 LOOSING STRAT
         //IA 8077 LOOSING STRAT
         //IA 6891
-        if ($this->result->getNbRound() < 10 || ($this->result->getNbRound() > 50 && $this->result->getStatsFor($this->opponentSide)['score'] > $this->result->getStatsFor($this->mySide)['score']
-            && $this->result->getLastScoreFor($this->mySide) > $this->result->getLastScoreFor($this->opponentSide))) {
+        //IA 7297
+        if ($this->result->getNbRound() < 10) {
             if ($this->result->getLastChoiceFor($this->opponentSide) === parent::rockChoice()) {
                 return parent::paperChoice();
             }
