@@ -40,8 +40,16 @@ class OssusPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
-
-        return parent::paperChoice();
+        if ($this->result->getLastChoiceFor($this->mySide) === 0) {
+            return parent::rockChoice();
+        }
+        if ($this->result->getLastChoiceFor($this->opponentSide) === parent::rockChoice()) {
+            return parent::paperChoice();
+        }
+        if ($this->result->getLastChoiceFor($this->opponentSide) === parent::scissorsChoice()) {
+            return parent::rockChoice();
+        }
+        return parent::scissorsChoice();
 
     }
 };
