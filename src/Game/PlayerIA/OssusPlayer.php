@@ -20,12 +20,12 @@ class OssusPlayer extends Player
         //IA 76061
         if ($this->result->getNbRound() < 77) {
             if ($this->result->getLastChoiceFor($this->opponentSide) === parent::rockChoice()) {
-                return parent::paperChoice();
+                return parent::scissorsChoice();
             }
             if ($this->result->getLastChoiceFor($this->opponentSide) === parent::scissorsChoice()) {
-                return parent::rockChoice();
+                return parent::paperChoice();
             }
-            return parent::scissorsChoice();
+            return parent::rockChoice();
         }
 
         if ($this->result->getStatsFor($this->opponentSide)[parent::scissorsChoice()] > $this->result->getStatsFor($this->opponentSide)[parent::rockChoice()]) {
