@@ -32,6 +32,10 @@ class OssusPlayer extends Player
             return parent::scissorsChoice();
         }
 
+        if ($this->result->getNbRound() > 150 && $this->result->getStatsFor($this->opponentSide)['score'] > $this->result->getStatsFor($this->mySide)['score']) {
+            return $this->result->getLastChoiceFor($this->opponentSide);
+        }
+
         if ($this->result->getStatsFor($this->opponentSide)[parent::scissorsChoice()] > $this->result->getStatsFor($this->opponentSide)[parent::rockChoice()]) {
             if ($this->result->getStatsFor($this->opponentSide)[parent::scissorsChoice()] > $this->result->getStatsFor($this->opponentSide)[parent::paperChoice()]) {
                 return parent::rockChoice();
