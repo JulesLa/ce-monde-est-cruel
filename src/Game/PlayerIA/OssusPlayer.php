@@ -21,8 +21,8 @@ class OssusPlayer extends Player
         //IA 10297 Stats
         //IA 10483 inverse 50 premier rounds puis stats
         //IA 8926
-        //IA LOOSING STRAT
-        if ($this->result->getNbRound() < 50) {
+        //IA 8261 LOOSING STRAT
+        if ($this->result->getNbRound() < 10) {
             if ($this->result->getLastChoiceFor($this->opponentSide) === parent::rockChoice()) {
                 return parent::paperChoice();
             }
