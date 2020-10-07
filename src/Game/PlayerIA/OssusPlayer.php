@@ -17,7 +17,6 @@ class OssusPlayer extends Player
     protected $result;
     public function getChoice()
     {
-        //IA 76061
         if ($this->result->getNbRound() < 77) {
             if ($this->result->getLastChoiceFor($this->opponentSide) === parent::rockChoice()) {
                 return parent::scissorsChoice();
