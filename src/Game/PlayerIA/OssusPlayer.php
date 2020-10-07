@@ -7,7 +7,7 @@ use Hackathon\Game\Result;
 /**
  * Class OssusPlayers
  * @package Hackathon\PlayerIA
- * @author YOUR NAME HERE
+ * @author Jules LAPISARDI
  */
 class OssusPlayer extends Player
 {
@@ -41,8 +41,7 @@ class OssusPlayer extends Player
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
 
-
-        return parent::rockChoice();
+        return parent::paperChoice();
 
     }
 };
